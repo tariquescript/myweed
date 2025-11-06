@@ -7,18 +7,12 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-amber-50: oklch(98.7% 0.022 95.277);
-    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-emerald-50: oklch(97.9% 0.021 166.113);
     --color-fuchsia-50: oklch(97.7% 0.017 320.058);
-    --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-600: oklch(44.6% 0.03 256.802);
-    --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
-    --color-gray-900: oklch(21% 0.034 264.665);
     --color-gray-950: oklch(13% 0.028 261.692);
-    --color-black: #000;
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
@@ -213,9 +207,6 @@
   .w-80 {
     width: calc(var(--spacing) * 80);
   }
-  .w-\[30\%\] {
-    width: 30%;
-  }
   .w-\[80\%\] {
     width: 80%;
   }
@@ -386,19 +377,9 @@
       position: static;
     }
   }
-  .sm\:left-5 {
+  .sm\:flex {
     @media (width >= 40rem) {
-      left: calc(var(--spacing) * 5);
-    }
-  }
-  .sm\:left-10 {
-    @media (width >= 40rem) {
-      left: calc(var(--spacing) * 10);
-    }
-  }
-  .sm\:left-100 {
-    @media (width >= 40rem) {
-      left: calc(var(--spacing) * 100);
+      display: flex;
     }
   }
   .sm\:grid {
@@ -416,24 +397,24 @@
       height: 100%;
     }
   }
-  .sm\:w-\[70\%\] {
-    @media (width >= 40rem) {
-      width: 70%;
-    }
-  }
-  .sm\:w-\[80\%\] {
-    @media (width >= 40rem) {
-      width: 80%;
-    }
-  }
-  .sm\:w-\[100\%\] {
-    @media (width >= 40rem) {
-      width: 100%;
-    }
-  }
   .sm\:w-full {
     @media (width >= 40rem) {
       width: 100%;
+    }
+  }
+  .sm\:grid-flow-col {
+    @media (width >= 40rem) {
+      grid-auto-flow: column;
+    }
+  }
+  .sm\:grid-flow-col-dense {
+    @media (width >= 40rem) {
+      grid-auto-flow: column dense;
+    }
+  }
+  .sm\:grid-flow-row {
+    @media (width >= 40rem) {
+      grid-auto-flow: row;
     }
   }
   .sm\:grid-cols-2 {
@@ -441,9 +422,29 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
+  .sm\:grid-cols-3 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .sm\:grid-cols-none {
+    @media (width >= 40rem) {
+      grid-template-columns: none;
+    }
+  }
+  .sm\:grid-cols-subgrid {
+    @media (width >= 40rem) {
+      grid-template-columns: subgrid;
+    }
+  }
   .sm\:grid-rows-2 {
     @media (width >= 40rem) {
       grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .sm\:grid-rows-subgrid {
+    @media (width >= 40rem) {
+      grid-template-rows: subgrid;
     }
   }
   .sm\:flex-col {
@@ -451,14 +452,19 @@
       flex-direction: column;
     }
   }
+  .sm\:place-items-center {
+    @media (width >= 40rem) {
+      place-items: center;
+    }
+  }
+  .sm\:content-center {
+    @media (width >= 40rem) {
+      align-content: center;
+    }
+  }
   .sm\:items-center {
     @media (width >= 40rem) {
       align-items: center;
-    }
-  }
-  .sm\:justify-around {
-    @media (width >= 40rem) {
-      justify-content: space-around;
     }
   }
   .sm\:justify-center {
@@ -466,19 +472,24 @@
       justify-content: center;
     }
   }
+  .sm\:justify-center-safe {
+    @media (width >= 40rem) {
+      justify-content: safe center;
+    }
+  }
   .sm\:justify-end {
     @media (width >= 40rem) {
       justify-content: flex-end;
     }
   }
-  .sm\:justify-evenly {
-    @media (width >= 40rem) {
-      justify-content: space-evenly;
-    }
-  }
   .sm\:gap-y-5 {
     @media (width >= 40rem) {
       row-gap: calc(var(--spacing) * 5);
+    }
+  }
+  .sm\:self-center {
+    @media (width >= 40rem) {
+      align-self: center;
     }
   }
   .sm\:border-none {
@@ -502,6 +513,11 @@
       background-repeat: no-repeat;
     }
   }
+  .sm\:align-middle {
+    @media (width >= 40rem) {
+      vertical-align: middle;
+    }
+  }
   .sm\:leading-8 {
     @media (width >= 40rem) {
       --tw-leading: calc(var(--spacing) * 8);
@@ -518,24 +534,9 @@
       column-gap: calc(var(--spacing) * 5);
     }
   }
-  .lg\:w-\[30\%\] {
-    @media (width >= 64rem) {
-      width: 30%;
-    }
-  }
-  .lg\:w-\[60\%\] {
-    @media (width >= 64rem) {
-      width: 60%;
-    }
-  }
   .lg\:w-\[70\%\] {
     @media (width >= 64rem) {
       width: 70%;
-    }
-  }
-  .lg\:w-\[80\%\] {
-    @media (width >= 64rem) {
-      width: 80%;
     }
   }
 }
